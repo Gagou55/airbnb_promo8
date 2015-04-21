@@ -2,18 +2,43 @@
   <div class = "container text-center">
     <div class = "row">
       <div class = "col-xs-6 col-xs-offset-3">
-        <h1>Authentification WagonAir</h1>
-        <h4>Welcome to the booking wonderful interface</h4>
 
-  <% if user_signed_in? %>
-    Hello <%= current_user.email %>!
-    <%= link_to 'Sign out', destroy_user_session_path, method: 'delete', class: "btn btn-danger" %>
-  <% else %>
-    <%= link_to 'Sign up', new_user_registration_path, class: "btn btn-primary" %>
-    <%= link_to 'Sign in', new_user_session_path, class: "btn btn-success" %>
-  <% end %>
+      </div>
+    </div>
+  </div>
+  <div class = "search-bar">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+
+
+        </div>
+    </div>
+  </div>
+
 
   </div>
+</div>
+  <div class ="titre-home text-center">
+    <h2>Bienvenue chez vous</h2>
   </div>
+  <div class = "container text-center">
+    <div class = "row">
+      <div class = "col-sm-12 col-md-4">
+        <%= image_tag "img3.png" %>
+        <h3>Voyagez</h3>
+        <p>Chez des particuliers dans toute la France</p>
+      </div>
+      <div class = "col-sm-12 col-md-4">
+        <%= image_tag "img1.png" %>
+        <h3>Appréciez l’espace offert par un logement entier</h3>
+        <p>Économisez en moyenne 50 % par rapport à une chambre d’hôtel</p>
+      </div>
+      <div class = "col-sm-12 col-md-4">
+        <%= image_tag "img2.png" %>
+        <h3>Réservez l’esprit tranquille</h3>
+        <p>Des logements approuvés par des professionnels et un service client disponible 24h/24 et 7j/7</p>
+      </div>
+    </div>
   </div>
 </div>

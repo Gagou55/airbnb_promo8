@@ -1,2 +1,9 @@
-<h1>Flats#show</h1>
-<p>Find me in app/views/flats/show.html.erb</p>
+<h2>Welcom to <%= @flat.users.name %> flat</h2>
+<ul>
+  <li><%= @flat.street %></li>
+  <li><%= @flat.zip_code %></li>
+  <li><%= @flat.city %></li>
+  <li><%= @flat.capacity %></li>
+  <li><%= @flat.description %></li>
+</ul>
+<%= link_to "All flats", flats_path, class: "btn btn-primary"%>

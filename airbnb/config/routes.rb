@@ -1,16 +1,18 @@
 Rails.application.routes.draw do
 
-  get 'users/show'
+  # get 'users/show'
 
-  get 'users/update'
+  # get 'users/update'
 
-  get 'users/edit'
+  # get 'users/edit'
 
   resources :flats, only: [:index, :show, :update, :edit, :create, :new] do
     resources :reservations, only: [ :new, :create, :show]
   end
 
   devise_for :users
+  resources :users, only: [:show]
+
   root to: "welcome#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

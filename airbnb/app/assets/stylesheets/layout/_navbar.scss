@@ -1,27 +1,30 @@
-$red-home: #e7494b;
-
-
 /* -------------------------------------
  * Colors & Fonts
  * ------------------------------------- */
-$navbar-color: transparent;
-
+$navbar-color: $gray-light;
+$navbar-hover-color: $yellow;
+$navbar-font-family: $navbar-font;
+$navbar-font-size: 14px;
+$navbar-text-transform: capitalize;
+$navbar-font-weight: 300;
+$navbar-letter-spacing: 1.5px;
+$navbar-font-family: $navbar-font;
 $navbar-bg: white;
 
 /* -------------------------------------
  * Box model
  * ------------------------------------- */
 $navbar-height: 50px;
-$navbar-vertical-padding: 5px;
+$navbar-vertical-padding: 10px;
 $navbar-horizontal-padding: 20px;
-$navbar-border-bottom-width: 0;
-$navbar-border-bottom-color: grey;
+$navbar-border-bottom-width: 1px;
+$navbar-border-bottom-color: $gray-lighter;
 
 /* -------------------------------------
  * Navbar button
  * ------------------------------------- */
 $navbar-btn-height: 40px;
-$navbar-btn-bg: #e7494b;
+$navbar-btn-bg: lightgrey;
 $navbar-btn-color: white;
 $navbar-btn-horizontal-padding: 10px;
 $navbar-btn-radius: 2px;
@@ -37,14 +40,16 @@ $navbar-profile-border-width: 2px;
  * SCSS code
  * ------------------------------------- */
 .navbar-wagon {
-  background: transparant;
+  background: $navbar-bg;
+  font-family: $navbar-font-family;
   border: none;
-  margin-bottom:0;
-  padding-bottom: 0;
-  font-weight: 400;
-  //padding-left: $navbar-horizontal-padding;
+  font-size: $navbar-font-size;
+  text-transform: $navbar-text-transform;
+  font-weight: $navbar-font-weight;
+  letter-spacing: $navbar-letter-spacing;
+  padding-left: $navbar-horizontal-padding;
   padding-right: $navbar-horizontal-padding;
-  // border-bottom: $navbar-border-bottom-width solid $navbar-border-bottom-color;
+  border-bottom: $navbar-border-bottom-width solid $navbar-border-bottom-color;
   min-height: 0;
   transition: background 0.4s ease;
 
@@ -58,15 +63,11 @@ $navbar-profile-border-width: 2px;
     padding-top: $navbar-vertical-padding;
     padding-bottom: $navbar-vertical-padding;
     background-color: transparent;
-    -webkit-transition: all 0.3s ease;
-       -moz-transition: all 0.3s ease;
-        -ms-transition: all 0.3s ease;
-            transition: all 0.3s ease;
   }
 
   .navbar-nav > li > a:hover,
   .navbar-nav > .open > a:hover {
-
+    color: $navbar-hover-color;
     background-color: transparent;
   }
 
@@ -88,7 +89,7 @@ $navbar-profile-border-width: 2px;
     background-color: $navbar-btn-bg;
     font-size: 12px;
     &:hover{
-      background-color: white;
+      background-color: darken($navbar-btn-bg, 30%);
     }
   }
 
@@ -133,16 +134,6 @@ $navbar-profile-border-width: 2px;
   }
 }
 
-.navbar {
-  position: fixed;
-  min-height: 50px;
-  margin-bottom: 0px !important;
-
-}
-.navbar-default {
-  background-color: transparent !important;
-  border-color: transparent !important;
-}
 /* -------------------------------------
  * Navbar profile picture
  * ------------------------------------- */

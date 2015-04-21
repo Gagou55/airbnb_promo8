@@ -7,7 +7,15 @@ $base-font: "Open Sans", "Helvetica", "sans-serif";
 $header-font: "Montserrat", "sans-serif";
 $navbar-font: 'Raleway', "sans-serif";
 
-
+// Local fonts (uncomment following lines)
+// @font-face {
+//   font-family: "Font Name";
+//   src: font-url('FontFile.eot');
+//   src: font-url('FontFile.eot?#iefix') format('embedded-opentype'),
+//        font-url('FontFile.woff') format('woff'),
+//        font-url('FontFile.ttf') format('truetype')
+// }
+// $my-font: "Font Name";
 
 // Font-size and line-height
 $base-size: 16px;
@@ -17,7 +25,6 @@ $base-height: 1.4;
  * Colors
  * ------------------------------------- */
 // Scheme
-$red-home: #e7494b;
 $red: #EE5F5B;
 $blue: #469AE0;
 $yellow: #FDB631;

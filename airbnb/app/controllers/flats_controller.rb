@@ -10,7 +10,7 @@ class FlatsController < ApplicationController
   end
 
   def create
-    @flat = current_user.flats.new(flat_params)
+    @flat = current_user.flat.new(flat_params)
 
     if @flat.save
       redirect_to flat_path(@flat)

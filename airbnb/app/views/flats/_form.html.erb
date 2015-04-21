@@ -1,0 +1,9 @@
+<%= form_for(@flat) do |f| %>
+  <%= f.text_field :street %>
+  <%= f.number_field :capacity %>
+  <%= f.number_field :zip_code %>
+  <%= f.text_field :city %>
+  <%= f.text_field :description %>
+  <%= f.submit %>
+<% end %>
+

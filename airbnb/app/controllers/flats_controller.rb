@@ -21,10 +21,13 @@ class FlatsController < ApplicationController
   end
 
   def update
-
+    @flat = flat.find(params[:id])
+    @flat.update(flat_params)
+    redirect_to flat_path(@flat)
   end
 
   def edit
+    @Flat = Flat.find(params[:id])
   end
 
   private

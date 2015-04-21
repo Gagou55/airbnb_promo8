@@ -1,5 +1,5 @@
 <div>
-  <%= image_tag "avatar.jpg" %>
+  <%= image_tag @post.avatar.url(:medium) %>
   <%= @user.first_name %>
 </div>
 

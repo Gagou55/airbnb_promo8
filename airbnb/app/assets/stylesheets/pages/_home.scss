@@ -25,6 +25,10 @@
   }
 }
 
+.mt-20 {
+  margin-top:20px;
+ }
+
 .titre-home {
   h2 {
     text-transform:uppercase;
@@ -41,4 +45,13 @@
   background-color: rgba(64, 64, 64, 0.5);
   width:100%;
   z-index:100;
+}
+
+.input-large {
+width: 210px;
+height: 34px !important;
+margin-bottom: 0px !important;
+line-height: 30px !important;
+padding: 11px 19px !important;
+font-size: 17.5px !important;
 }

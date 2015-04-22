@@ -7,9 +7,9 @@ class FlatsController < ApplicationController
 
   def index
     if params[:search]
-      @flats = Flat.search(params[:search]).order("created_at DESC")
+      @flats = Flat.where('city LIKE ?', params[:search])
     else
-      @flats = Flat.all.order('created_at DESC')
+      @flats = Flat.find(:all)
     end
   end
 

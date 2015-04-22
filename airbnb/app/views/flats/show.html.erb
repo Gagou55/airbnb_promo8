@@ -1,9 +1,12 @@
-<h2>Welcom to <%= @flat %> flat</h2>
-<ul>
-  <li><%= @flat.street %></li>
-  <li><%= @flat.zip_code %></li>
-  <li><%= @flat.city %></li>
-  <li><%= @flat.capacity %></li>
-  <li><%= @flat.description %></li>
-</ul>
-<%= link_to "All flats", flats_path, class: "btn btn-primary"%>
+<h2>Welcom to <%= @flat.description %></h2>
+<div class = "continair">
+  <div class = "img-avatar"><%= image_tag "http://placehold.it/30x30" %></div>
+  <div class = "row"><%= @flat.street %></div>
+  <div class = "row"><%= @flat.zip_code %></div>
+  <div class = "row"><%= @flat.city %></div>
+  <div class = "row"><%= @flat.capacity %></div>
+  <div class = "row"><%= @flat.description %></div>
+</div>
+
+
+<%= link_to "Reservation", flat_reservation_path([:flat_id], [:id]), class: "btn btn-danger"%>

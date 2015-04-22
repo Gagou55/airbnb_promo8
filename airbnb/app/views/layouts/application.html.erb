@@ -9,7 +9,7 @@
   <%= csrf_meta_tags %>
 </head>
 
-<body id="<%= "#{controller_path.gsub('/', '_')}_#{action_name}" %>">
+<body id="<%= "#{controller_path.gsub('/', '_')}_#{action_name}" %>" class="padded">
   <%= render 'shared/navbar' %>
   <%= render 'shared/notices' %>
 

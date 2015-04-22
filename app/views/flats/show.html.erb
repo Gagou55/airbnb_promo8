@@ -1,12 +1,18 @@
-<h2>Welcom to <%= @flat.description %></h2>
-<div class = "continair">
-  <div class = "img-avatar"><%= image_tag "http://placehold.it/30x30" %></div>
+<h2>Welcome to <%= @flat.description %></h2>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4>">
+      <%= image_tag @flat.picture.url(:medium) %>
+    </div>
+  </div>
+</div>
   <div class = "row"><%= @flat.street %></div>
   <div class = "row"><%= @flat.zip_code %></div>
   <div class = "row"><%= @flat.city %></div>
   <div class = "row"><%= @flat.capacity %></div>
   <div class = "row"><%= @flat.description %></div>
-</div>
+
+
 
 
 <%= link_to "Reservation", flat_reservation_path([:flat_id], [:id]), class: "btn btn-danger"%>

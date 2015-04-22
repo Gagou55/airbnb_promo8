@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20150422100711) do
     t.string   "type_of_habitation"
     t.integer  "capacity"
     t.string   "street"
-    t.integer  "zip_code"
+    t.string   "zip_code"
     t.string   "city"
     t.text     "description"
     t.string   "picture1"

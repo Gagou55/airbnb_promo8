@@ -1,7 +1,13 @@
-<div>
-  <%= image_tag @post.picture.url(:medium) %>
-  <%= @user.first_name %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 text-center padded img-rounded">
+      <%= image_tag @user.picture.url(:medium) %> <br> <br>
+      <%= @user.name %>
+
+    </div>
+  </div>
 </div>
+
 
 <div>
   <% @user.flats do |flat| %>

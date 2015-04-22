@@ -1,0 +1,14 @@
+<div class="container padded">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <%= simple_form_for(@flat) do |f| %>
+      <%= f.input :street %>
+      <%= f.input :capacity %>
+      <%= f.input :zip_code %>
+      <%= f.input :city %>
+      <%= f.input :description %>
+      <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<div class = "container">
+  <h1>Search Result</h1>
+  <% @flats.each do |flat|%>
+  <div class = "row" id="wrapper">
+    <%= flat.description %>
+    <%= flat.city %>
+    <%= flat.user.email %>
+  </div>
+  <div><%= image_tag "http://placehold.it/450x200" %>
+    <%=  %>
+  </div>
+  <% end %>
+</div>

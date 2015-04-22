@@ -1,0 +1,12 @@
+<div>
+  <%= image_tag @post.avatar.url(:medium) %>
+  <%= @user.first_name %>
+</div>
+
+<div>
+  <% @user.flats do |flat| %>
+  <%= flat.picture1 %>
+  <%= flat.city %>
+  <%= flat.price %>
+  <% end %>
+</div>

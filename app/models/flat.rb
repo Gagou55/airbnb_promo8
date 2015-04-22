@@ -1,7 +1,11 @@
 class Flat < ActiveRecord::Base
   belongs_to :user
 
-  def self.search(query)
-    where("city like ?", "%#{query}%")
-  end
+
+  has_attached_file :picture,
+    styles: { medium: "300x300>", thumb: "100x100>" }
+
+  validates_attachment_content_type :picture,
+    content_type: /\Aimage\/.*\z/
+
 end

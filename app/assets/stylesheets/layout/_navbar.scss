@@ -4,7 +4,10 @@ $red-home: #e7494b ;
 /* -------------------------------------
 * Colors & Fonts
 * ------------------------------------- */
-$navbar-color: black;
+$navbar-color: #D90558;
+$navbar-color-hover: #F9E0D9;
+$navbar-color-button: #817F82;
+$navbar-color-button-hover: #7880B5;
 
 $navbar-bg: white;
 
@@ -22,7 +25,7 @@ $navbar-border-bottom-color: grey;
 * ------------------------------------- */
 $navbar-btn-height: 40px;
 $navbar-btn-bg: #e7494b ;
-$navbar-btn-color: white;
+$navbar-btn-color: rgb(102, 119, 174);
 $navbar-btn-horizontal-padding: 10px;
 $navbar-btn-radius: 2px;
 
@@ -37,7 +40,7 @@ $navbar-profile-border-width: 2px;
 * SCSS code
 * ------------------------------------- */
 .navbar-wagon {
- background: transparant;
+ background: transparent;
  border: none;
  margin-bottom:0;
  padding-bottom: 0;
@@ -81,14 +84,15 @@ $navbar-profile-border-width: 2px;
  .navbar-nav > li > a.btn {
    line-height: $navbar-btn-height;
    padding: 0 $navbar-btn-horizontal-padding;
-   color: $navbar-btn-color;
+   color: $navbar-color;
    border-radius: $navbar-btn-radius;
    margin-top: ($navbar-height + 2 * $navbar-vertical-padding - $navbar-btn-height) / 2;
    font-weight: bold;
-   background-color: $navbar-btn-bg;
+   background-color: $navbar-color-button;
    font-size: 12px;
+   border-color: #9CA3A8;
    &:hover{
-     background-color: white;
+     background-color: $navbar-color-button-hover;
    }
  }
 
@@ -133,16 +137,26 @@ $navbar-profile-border-width: 2px;
  }
 }
 
+#navbar-logo {
+  margin-left: 20px;
+}
+
 .navbar {
  position: fixed;
  min-height: 50px;
  margin-bottom: 0px !important;
 
 }
-.navbar-default {
- background-color: transparent !important;
- border-color: transparent !important;
+
+.navbar-wagon {
+.navbar-nav > li > a:hover {
+  color: $navbar-color-hover;
 }
+}
+// .navbar-default {
+//  background-color: transparent !important;
+//  border-color: transparent !important;
+// }
 /* -------------------------------------
 * Navbar profile picture
 * ------------------------------------- */

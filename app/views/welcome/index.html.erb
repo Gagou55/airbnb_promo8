@@ -9,14 +9,11 @@
   <div class = "search-bar">
     <div class="container">
       <div class="row">
-        <div class="col-md-12">
-          <form class="form-inline mt-20 text-center">
-            <div class="form-group">
-              <label for="exampleInputVille"></label>
-              <input type="text" class="form-control input-large" id="exampleInputVille" placeholder="Où souhaitez-vous aller ?">
-            </div>
-            <button type="submit" class="btn btn-default" ><%= link_to " Rechercher", flats_path %></button>
-          </form>
+        <div class="col-md-12 form-inline mt-20 text-center form-group" id="exampleInputVille" placeholder="Où souhaitez-vous aller ?">
+              <%= form_tag flats_path, method: :get do %>
+                <%= text_field_tag :search, params[:search] %>
+                <%= submit_tag "Search" %>
+            <% end %>
         </div>
         </div>
     </div>

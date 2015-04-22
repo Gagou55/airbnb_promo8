@@ -1,8 +1,16 @@
 class FlatsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update]
 
+  # def index
+  #   @flats = Flat.all
+  # end
+
   def index
-    @flats = Flat.all
+    if params[:search]
+      @flats = Flat.search(params[:search]).order("created_at DESC")
+    else
+      @flats = Flat.all.order('created_at DESC')
+    end
   end
 
   def show
@@ -36,7 +44,7 @@ class FlatsController < ApplicationController
   private
 
   def flat_params
-    params.require(:flat).permit( :capacity, :street, :zip_code, :city, :description)
+    params.require(:flat).permit( :capacity, :street, :zip_code, :city, :description, :search)
   end
 end
 

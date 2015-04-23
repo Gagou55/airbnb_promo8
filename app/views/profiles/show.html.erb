@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+  <% @flats.each do |flat| %>
+  <div class="col-xs-3">
+    <%= flat.picture1 %>
+  </div>
+  <div class="col-xs-6">
+    <%=  %>
+      <%= link_to flat_path(flat.id) do %>
+        <%= t ".profile", default: "#{flat.description}" %>
+      <% end %>
+  </div>
+  <% end %>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  </div>
+</div>
+
+
+

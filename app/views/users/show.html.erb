@@ -1,6 +1,6 @@
 <div class="container">
 
-  <div class="row padded">
+  <div class="row">
     <div class="col-xs-3 text-center">
 
       <%= image_tag @user.picture.url(:medium) %> <br> <br>
@@ -8,17 +8,26 @@
       <%= @user.last_name %> <br><br>
       <%= link_to edit_user_path(current_user[:id]) do %>
         <i class="fa fa-cog fa-spin"></i> <%= t ".profile", default: "Modifier votre profil" %>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
       <% end %>
     </div>
     <div class="col-xs-2"></div>
     <div class="col-xs-6">
-      <%= link_to flats_path(current_user[:id]) do %>
+      <%= link_to profile_path(current_user[:id]) do %>
         <i class="fa fa-building"></i> <%= t ".profile", default: "Mes appartements" %>
       <% end %>
       <div>
-        <% @user.flats do |flat| %>
+        <% @user.flats.each do |flat| %>
+        <strong><%= flat.description %></strong><br>
         <%= flat.picture1 %>
-        <%= flat.city %>
+        <%= flat.address %>
         <%= flat.price %>
         <% end %>
 

@@ -3,12 +3,12 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12 form-inline mt-20 text-center form-group" id="exampleInputVille" placeholder="Où souhaitez-vous aller ?">
-              <%= form_tag flats_path, method: :get do %>
-                <%= text_field_tag :search, params[:search] %>
-                <%= submit_tag "Search" %>
+            <%= form_tag flats_path, :id => 'search_welcome', method: :get do %>
+              <%= text_field_tag :search, params[:search] %>
+              <%= submit_tag "Search" , class: "btn btn-primary btn-search" %>
             <% end %>
         </div>
-        </div>
+      </div>
     </div>
   </div>
 

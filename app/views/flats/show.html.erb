@@ -26,16 +26,9 @@
         <p><%= @flat.description %></p>
     </div>
     <div class="col-xs-12 col-md-5 col-md-offset-1">
-
-    <ul class="list-inline text-center" id="grey-font">
-      <li class="mr-40"><i class="fa fa-home fs-40"></i>
-        <p class="fs-18"><%= @flat.city %></p>
-      </li>
-      <li class="mr-40"><i class="fa fa-users fs-40"></i>
-        <p class="fs-18"><%= @flat.capacity %></p>
-      </li>
-      <li><i class="fa fa-hotel fs-40"></i></li>
-    </ul>
+      <div class="cadre-photo text-center m-b">
+        <%= image_tag @flat.user.picture(:medium), class: "img-avatar" %>
+      </div>
 
     </div>
   </div>
@@ -44,7 +37,7 @@
   <div class = "row"><%= @flat.zip_code %></div>
   <div class = "row"><%= @flat.city %></div>
   <div class = "row"><%= @flat.capacity %></div>
-  <%= image_tag current_user.picture, class: "img-avatar" %>
+
 
 
 

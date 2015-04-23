@@ -10,6 +10,18 @@
 
 }
 
+.cadre-photo {
+  width:100%;
+  background-color:white;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  border: 1px solid #dedede;
+  padding-bottom:40px;
+  padding-top:30px;
+
+}
+
 .price {
   color: #58585A;
   font-size: 36px;
@@ -39,4 +51,8 @@
 
 h1, h2, h3, h4 {
   color: #58585A;
+}
+
+.icon {
+  font-size:40px
 }

@@ -1,28 +1,15 @@
-<div class="container">
+<div class="container page text-center">
+  <h1 class="m-b">My Appartments</h1>
   <div class="row">
-  <% @flats.each do |flat| %>
-  <div class="col-xs-3">
-    <%= flat.picture1 %>
-  </div>
-  <div class="col-xs-6">
-    <%=  %>
+    <% @flats.each do |flat| %>
+    <div class="col-xs-4 col-sm-12">
+      <%= image_tag flat.picture.url(:medium) %>
       <%= link_to flat_path(flat.id) do %>
-        <%= t ".profile", default: "#{flat.description}" %>
+      <%= t ".profile", default: "#{flat.title}" %>
       <% end %>
-  </div>
-  <% end %>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
+      <br><br>
+    </div>
+    <br><br>
+    <% end %>
   </div>
 </div>
-
-
-

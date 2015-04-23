@@ -31,7 +31,7 @@
       <div class="cadre-photo text-center m-b">
         <%= image_tag @flat.user.picture(:medium), class: "img-avatar m-b" %>
 
-        <h4><%= @flat.user.first_name + " " + @flat.user.last_name %></h4>
+        <h4><%= "#{@flat.user.first_name} #{@flat.user.last_name}" %></h4>
       </div>
 
     </div>

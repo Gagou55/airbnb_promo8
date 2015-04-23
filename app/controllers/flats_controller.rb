@@ -1,6 +1,10 @@
 class FlatsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update]
 
+  # def index
+  #   @flats = Flat.all
+  # end
+
   def index
     if params[:search]
       @flats = Flat.where('city LIKE ?', params[:search])

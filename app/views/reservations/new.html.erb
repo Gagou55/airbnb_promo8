@@ -2,11 +2,15 @@
 <div class="container">
   <div class="row centered">
     <div class="col-xs-12 col-md-6 col-md-offset-3">
-    <%= simple_form_for([ @reservation ], url: flat_reservations_path, method: :post) do |f| %>
-    <%= f.input :begin_date, label: "Your arrival date" %>
-    <%= f.input :end_date, label: "Your departure date" %>
-    <%= f.button :submit %>
+    <%= simple_form_for(@reservation, url: flat_reservations_path, method: :post) do |f| %>
+      <%= f.input :begin_date, as: :string, input_html: { :class => "datepicker" } %>
+      <%= f.input :end_date, as: :string, input_html: { :class => "datepicker" } %>
+
+      <%= f.button :submit %>
     <% end %>
    </div>
   </div>
 </div>
+
+
+

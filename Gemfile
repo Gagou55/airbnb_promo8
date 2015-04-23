@@ -39,7 +39,7 @@ gem 'paperclip'
 gem 'omniauth-facebook'
 
 
-
+gem 'bootstrap-datepicker-rails'
 
 
 # Use ActiveModel has_secure_password

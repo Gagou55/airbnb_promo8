@@ -7,7 +7,12 @@ class FlatsController < ApplicationController
 
   def index
     if params[:search]
-      @flats = Flat.where('city LIKE ?', params[:search])
+      @flats = Flat.near(params[:search], 3)
+      @markers = Gmaps4rails.build_markers(@flats) do |flat, marker|
+      marker.lat flat.latitude
+      marker.lng flat.longitude
+    end
+
     else
       @flats = Flat.find(:all)
     end
@@ -15,7 +20,7 @@ class FlatsController < ApplicationController
 
   def show
     @flat = Flat.find(params[:id])
-
+    @alert_message = "You are viewing #{@flat.title}"
   end
 
   def create
@@ -45,7 +50,7 @@ class FlatsController < ApplicationController
   private
 
   def flat_params
-    params.require(:flat).permit( :capacity, :street, :zip_code, :city, :description, :picture, :search, :user_id, :price)
+    params.require(:flat).permit( :capacity, :address, :description, :picture, :latitude, :longitude, :title, :search, :user_id, :price)
   end
 end
 

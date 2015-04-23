@@ -4,8 +4,15 @@
  * Before writing in this file, look if there is not
  * already a Bootstrap SCSS variable that does the same job
  * ------------------------------------- */
+body {
+  padding-top: 50px;
+}
 .mt-10 {
   margin-top: 10px;
+}
+
+.m-20 {
+  margin: 20px;
 }
 
 .mt-20 {
@@ -49,3 +56,24 @@
   font-size:40px;
  }
 }
+
+.flatcard {
+  border: 1px solid lightgray;
+  width: 320px;
+  margin: auto;
+  height: 300px;
+  background-color: white;
+  margin-top: 20px;
+  padding-top: 10px;
+  border-radius: 5px;
+ }
+
+ #map {
+  border-radius: 5px;
+  position: fixed !important;
+  overflow: hidden;
+  transform: translateZ(0px);
+  background-color: rgb(229, 227, 223);
+  right: 0px;
+  top: 40px;
+ }

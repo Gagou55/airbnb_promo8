@@ -20,6 +20,11 @@ s
   <%= javascript_include_tag "https://google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js" %>
 
   <%= javascript_include_tag "application" %>
+  <script type="text/javascript">
+    $(function () {
+    $('#datetimepicker1').datetimepicker();
+      });
+  </script>
 
   <%= yield(:after_js) %>
 

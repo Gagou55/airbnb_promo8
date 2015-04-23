@@ -25,10 +25,10 @@
       <% end %>
       <div>
         <% @user.flats.each do |flat| %>
-        <strong><%= flat.description %></strong><br>
+        <strong><%= flat.title %></strong><br>
         <%= flat.picture1 %>
         <%= flat.address %>
-        <%= flat.price %>
+        <%= "#{flat.price} €/nuit "%>
         <% end %>
 
         <br>

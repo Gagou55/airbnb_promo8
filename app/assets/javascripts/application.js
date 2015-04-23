@@ -16,10 +16,14 @@
 //= require underscore
 //= require gmaps/google
 //= require_tree .
+//= require bootstrap-datepicker
 
 
 $(document).ready(function() {
   // navbar transition jQuery script
+
+  $('.datepicker').datepicker({ format: "dd/mm/yyyy" });
+
   $(window).scroll(function(e){
     if ($(this).scrollTop() > 0) {
       $(".navbar").css({

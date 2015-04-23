@@ -38,9 +38,13 @@ body {
    border-radius: 10px;
  }
 
+ .page {
+  min-height: 450px;
+ }
+
  .noir {
   font-color: rgb(130, 130, 130) !important;
-
+  }
  h4 {
   font-size: 20px;
  }
@@ -54,6 +58,7 @@ body {
  }
  .fs-40 {
   font-size:40px;
+
  }
 }
 
@@ -77,3 +82,11 @@ body {
   right: 0px;
   top: 40px;
  }
+
+  }
+
+  .justify {
+    text-align: justify;
+  }
+
+

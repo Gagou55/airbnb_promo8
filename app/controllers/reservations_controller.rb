@@ -1,16 +1,18 @@
 class ReservationsController < ApplicationController
+  before_action :authenticate_user!
+
   def show
     @reservation = Reservation.find(params[:id])
   end
 
   def create
-    @reservation = Reservation.new(reservation_params)
-    @reservation.user_id = current_user.id
+    @reservation = current_user.reservations.new(reservation_params)
+
     @flat = Flat.find(params[:flat_id])
     @reservation.flat_id = @flat.id
-    @user = User.new(params[:user])
+
     if @reservation.save
-      redirect_to user_path(current_user[:id])
+      redirect_to user_path(current_user)
     else
       render :new
     end
@@ -24,7 +26,7 @@ class ReservationsController < ApplicationController
   private
 
   def reservation_params
-    params.require(:reservation).permit(:begin_date, :end_date, :flat_id, :user_id)
+    params.require(:reservation).permit(:begin_date, :end_date)
   end
 end
 

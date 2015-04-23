@@ -1,19 +1,16 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-md-4 col-md-offset-4">
-
-      <h2>Log in</h2>
+      <div class="form-design">
+      <h2 class="text-center padding-bottom-20">Log in</h2>
 
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-
         <div class="form-group">
-          <%= f.label :email %><br />
-          <%= f.email_field :email, autofocus: true, placeholder: "bob@gmail.com", class: "form-control" %>
+          <%= f.email_field :email, autofocus: true, placeholder: "Email", class: "form-control" %>
         </div>
 
         <div class="form-group">
-          <%= f.label :password %><br />
-          <%= f.password_field :password, placeholder: "********", autocomplete: "off", class: "form-control" %>
+          <%= f.password_field :password, placeholder: "Password", autocomplete: "off", class: "form-control" %>
         </div>
 
         <% if devise_mapping.rememberable? -%>
@@ -22,12 +19,19 @@
             <%= f.label :remember_me%>
           </div>
         <% end -%>
-
-          <%= f.submit "Log in", class: "btn btn-danger" %>
+        <div class="text-center padding-bottom-20">
+        <%= f.submit "Log in", class: "btn btn-danger" %>
+        <%- if devise_mapping.omniauthable? %>
+            <%- resource_class.omniauth_providers.each do |provider| %>
+            <%= link_to "Sign in with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider), class: "btn btn-primary"%><br />
+        <% end -%>
+        <% end -%>
+        <div class="mt-10">
+            <%= render "devise/shared/links" %>
+        </div>
+        </div>
       <% end %>
-
-      <%= render "devise/shared/links" %>
-
+      </div>
     </div>
   </div>
 </div>

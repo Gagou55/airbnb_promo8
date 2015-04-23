@@ -2,13 +2,11 @@
   <div class="row">
     <div class="col-sm-6 col-sm-offset-3">
       <%= simple_form_for(@flat, html: { multipart: true }) do |f| %>
-      <%= f.input :street %>
+      <%= f.input :title %>
+      <%= f.input :address %>
       <%= f.input :capacity %>
-      <%= f.input :zip_code %>
-      <%= f.input :city %>
       <%= f.input :description %>
       <%= f.input :price %>
-      <%= f.input :capacity %>
 
       <%= f.label :picture %>
       <%= f.file_field :picture %>

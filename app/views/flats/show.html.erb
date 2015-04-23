@@ -1,4 +1,4 @@
-<h1 class="text-center">Welcome to <%= @flat.description %></h1>
+<h1 class="text-center">Welcome to <%= @flat.title %></h1>
 <div class="m-b"></div>
 <div class="container">
 
@@ -12,7 +12,9 @@
               A partir de
             <%= @flat.price %> €
           </div>
-          <button type="button" class="btn btn-success btn-lg text-center">Demande de reservation</button>
+          <!-- <button type="button" class="btn btn-success btn-lg text-center">Demande de reservation</button> -->
+          <%= link_to t(".top_call_to_action", default: "Demande de réservation"), new_flat_reservation_path(@flat[:id]), class: "btn btn-success btn-lg text-center" %>
+        </li>
         </div>
       </div>
     </div>
@@ -22,19 +24,20 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-md-5">
-        <h4 class="text-center">À propos de ce logement</h4>
-        <p><%= @flat.description %></p>
+        <h4 class="text-center m-b">À propos de ce logement</h4>
+        <p class="justify"><%= @flat.description %></p>
     </div>
     <div class="col-xs-12 col-md-5 col-md-offset-1">
       <div class="cadre-photo text-center m-b">
-        <%= image_tag @flat.user.picture(:medium), class: "img-avatar" %>
+        <%= image_tag @flat.user.picture(:medium), class: "img-avatar m-b" %>
+
+        <h4><%= @flat.user.first_name + " " + @flat.user.last_name %></h4>
       </div>
 
     </div>
   </div>
 </div>
-  <div class = "row"><%= @flat.address %></div>
-  <div class = "row"><%= @flat.capacity %></div>
+
 
 
 

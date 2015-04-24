@@ -22,6 +22,10 @@
 
 }
 
+.rounded {
+  border-radius: 5px;
+}
+
 .price {
   color: #58585A;
   font-size: 36px;
@@ -80,9 +84,14 @@ h1, h2, h3, h4 {
 
 .image-user {
   position:absolute;
-  bottom:20px;
   bottom:25px;
   right:52px;
+}
+
+.image-profile {
+  position:absolute;
+  bottom:-15px;
+  right:25px;
 }
 
 .circle {

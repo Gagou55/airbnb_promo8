@@ -1,5 +1,8 @@
 <div id="banner">
-  <div class = "search-bar">
+  <div class="box-shadow">
+    <div class="absolute title-home"><h1>WELCOME HOME</h1>
+    </div>
+  <div class ="search-bar">
     <div class="container">
       <div class="row">
         <div class="col-md-12 form-inline mt-20 text-center form-group" id="exampleInputVille" placeholder="Où souhaitez-vous aller ?">
@@ -11,35 +14,14 @@
       </div>
     </div>
   </div>
+  </div>
 
   </div>
 </div>
   <div class ="titre-home text-center">
-    <h2>Welcome Home</h2>
-  </div>
-  <div class = "container text-center margin-20">
-    <div class = "row">
-      <div class = "col-sm-12 col-md-4">
-        <%= image_tag "img3.png" %>
-        <h3>Travel</h3>
-        <p>Anywhere in France</p>
-      </div>
-      <div class = "col-sm-12 col-md-4">
-        <%= image_tag "img1.png" %>
-        <h3>Rent a house</h3>
-        <p>To a host and make yourself at home</p>
-      </div>
-      <div class = "col-sm-12 col-md-4">
-        <%= image_tag "img2.png" %>
-        <h3>Enjoy</h3>
-        <p>Appreciate your trip thanks to AirBnB</p>
-      </div>
-    </div>
-  </div>
-  <div class ="titre-home text-center">
     <h2>Travel the world</h2>
   </div>
-  <div class="container text-center">
+  <div class="container text-center padding-bottom-40 rounded">
     <div class="row">
       <% @flats.each do |flat| %>
         <div class="col-md-4">

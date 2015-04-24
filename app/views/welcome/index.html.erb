@@ -50,6 +50,9 @@
             <div class="vignette-price">
               <h4><%= flat.price %>€</h4>
             </div>
+            <div class="image-user">
+            <%= image_tag flat.user.picture(:thumb), :width => 50, class: "img-circle circle" %>
+            </div>
           </div>
         </div>
       <% end %>

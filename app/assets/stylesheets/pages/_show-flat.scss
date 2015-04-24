@@ -59,7 +59,7 @@ h1, h2, h3, h4 {
 
 .vignette {
   margin-right:10px;
-  width:372px
+  // width:372px
 }
 
 .vignette:last-child {
@@ -70,4 +70,10 @@ h1, h2, h3, h4 {
   position:absolute;
   background-color: rgba(64, 64, 64, 0.5);
   bottom:40px;
+  left:55px;
+  h4 {
+    color: white;
+    padding-left:5px;
+    padding-right:5px;
+  }
 }

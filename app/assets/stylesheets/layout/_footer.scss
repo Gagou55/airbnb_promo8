@@ -1,6 +1,8 @@
 // Your footer style
 #footer-top {
   background: rgb(50, 50, 50);
+  position: relative;
+  z-index: 2000;
 }
 
 #white-font {

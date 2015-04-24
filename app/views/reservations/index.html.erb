@@ -1,0 +1,20 @@
+<div class="container">
+<br>
+<% number = 0 %>
+<% @reservations.each do |reservation| %>
+  <div class="col-xs-4" id="reservation-window-confirmation">
+    <div class=text-center>
+      <% number += 1 %>
+      <h2><%= "Your reservation #{number}" %></h2>
+      <% @flat = Flat.find(reservation.flat_id) %>
+      <%= image_tag @flat.picture1 %>
+      <%= "Your appartment: #{@flat.title}" %> <br>
+      <% @user = User.find(reservation.user_id) %>
+      <%= "Owner contact: #{@user.first_name} #{@user.last_name}" %> <br>
+      <%= "Date of arrival: #{reservation.begin_date}" %> <br>
+      <%= "Date of departure: #{reservation.end_date}" %> <br> <br>
+      <%= "ENJOYYYYY !!!!!!" %>
+    </div>
+  </div>
+<% end %>
+</div>

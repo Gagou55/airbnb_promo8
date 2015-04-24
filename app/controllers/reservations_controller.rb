@@ -1,6 +1,14 @@
 class ReservationsController < ApplicationController
   before_action :authenticate_user!
 
+  def index
+    if params[:flat_id]
+      @reservations = Reservation.find(flat_id: params[:flat_id])
+    else
+      @reservations = current_user.reservations
+    end
+  end
+
   def show
     @reservation = Reservation.find(params[:id])
   end
@@ -26,7 +34,7 @@ class ReservationsController < ApplicationController
   private
 
   def reservation_params
-    params.require(:reservation).permit(:begin_date, :end_date)
+    params.require(:reservation).permit(:id, :begin_date, :end_date)
   end
 end
 

@@ -1,2 +1,21 @@
-<h1>Reservations#show</h1>
-<p>Find me in app/views/reservations/show.html.erb</p>
+<div class="page">
+  <div class="container text-center">
+  <h1>Mes Réservations</h1> <br>
+  <div class="col-xs-4"></div>
+  <div class="col-xs-4" id="reservation-window-confirmation">
+    <div class=text-center>
+      <h2>Your reservation</h2>
+      <% @flat = Flat.find(@reservation.flat_id) %>
+      <%= image_tag @flat.picture1 %>
+      <%= "Your appartment: #{@flat.title}" %> <br>
+      <% @user = User.find(@reservation.user_id) %>
+      <%= "Owner contact: #{@user.first_name} #{@user.last_name}" %> <br>
+      <%= "Date of arrival: #{@reservation.begin_date}" %> <br>
+      <%= "Date of departure: #{@reservation.end_date}" %> <br> <br>
+      <%= "ENJOYYYYY !!!!!!" %>
+    </div>
+    </div>
+  </div>
+</div>
+<!--  /flats/:flat_id/reservations/:id -->
+<!-- flat_reservation -->

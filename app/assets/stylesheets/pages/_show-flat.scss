@@ -56,3 +56,18 @@ h1, h2, h3, h4 {
 .icon {
   font-size:40px
 }
+
+.vignette {
+  margin-right:10px;
+  width:372px
+}
+
+.vignette:last-child {
+  margin-right:0;
+}
+
+.vignette-price {
+  position:absolute;
+  background-color: rgba(64, 64, 64, 0.5);
+  bottom:40px;
+}

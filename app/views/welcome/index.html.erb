@@ -36,4 +36,22 @@
       </div>
     </div>
   </div>
+  <div class ="titre-home text-center">
+    <h2>Welcome Home</h2>
+  </div>
+  <div class="container">
+    <div class="row">
+      <% @flats.each do |flat| %>
+        <div class="col-xs-12 col-md-4 text-center vignette">
+          <div class="card">
+           <!--  <%= image_tag flat.picture.url(:medium) %> -->
+           <%= link_to(image_tag(flat.picture.url(:medium)), flat_path(flat[:id])) %>
+          </div>
+          <div class="vignette-price">
+            <h4><%= flat.price %>€</h4>
+            </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>

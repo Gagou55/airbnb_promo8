@@ -12,6 +12,7 @@ class ReservationsController < ApplicationController
     @reservation.flat_id = @flat.id
 
     if @reservation.save
+      @reservation.validation = true
       redirect_to user_path(current_user)
     else
       render :new
@@ -26,7 +27,7 @@ class ReservationsController < ApplicationController
   private
 
   def reservation_params
-    params.require(:reservation).permit(:begin_date, :end_date)
+    params.require(:reservation).permit(:begin_date, :end_date, :validation)
   end
 end
 

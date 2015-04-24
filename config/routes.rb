@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   end
 
   get "users/reservations", to: "reservations#index"
+  # get "users/reservation", to: "reservations#show"
 
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
   resources :users, only: [:show, :edit, :update]

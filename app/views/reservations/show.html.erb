@@ -3,7 +3,7 @@
   <h1>Mes Réservations</h1> <br>
   <div class="col-xs-4"></div>
   <div class="col-xs-4" id="reservation-window-confirmation">
-    <div class=text-center>
+    <div class="text-center">
       <h2>Your reservation</h2>
       <% @flat = Flat.find(@reservation.flat_id) %>
       <%= image_tag @flat.picture1 %>

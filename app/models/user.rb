@@ -7,8 +7,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [ :facebook ]
 
-
-
   has_attached_file :picture,
     styles: { large: "600x600>", medium: "300x300>", thumb: "100x100>" }
 
@@ -27,5 +25,4 @@ class User < ActiveRecord::Base
       user.token_expiry = Time.at(auth.credentials.expires_at)
     end
   end
-
 end

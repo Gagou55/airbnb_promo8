@@ -16,13 +16,21 @@
           <% @flats.each do |flat|%>
             <div class="col-xs-12 col-md-6 text-center">
               <div class="flatcard">
+                <%= link_to flat_path(flat[:id]) do %>
                 <div class="row">
+                  <div class="relative">
                   <%= image_tag flat.picture.url(:medium), width: 300, heigh: 200 %>
+                <div class="absolute vignette-flat">
+                  <h4> <%= flat.price %> €</h4>
+                  </div>
+                  </div>
                 </div>
                 <div class="row padding-20">
-                  <b> <%= flat.title %> </b> <br>
+                  <b> <%= flat.title %> </b>
+                  <br>
                   <%= flat.address %>
                 </div>
+                <% end %>
               </div>
             </div>
           <% end %>

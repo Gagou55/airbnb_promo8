@@ -13,13 +13,14 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.find(params[:id])
   end
 
-  def create
+  def create # Demande de reservation par un locataire
     @reservation = current_user.reservations.new(reservation_params)
     @reservation.validation = false
     @flat = Flat.find(params[:flat_id])
     @reservation.flat_id = @flat.id
 
     if @reservation.save
+
       redirect_to user_path(current_user)
     else
       render :new
@@ -31,13 +32,19 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.new
   end
 
-  def update
-    @reservation = Reservation.find(params[:id])
-    @reservation.validation = true
-    @reservation.save
+  def update # confirmation par un proprio (owner)
+    @reservation = Reservation.find(params[:id]) # la route flats/flat_id/reservations/reservation_id
+
+    if @reservation.user == current_user || @reservation.flat.user == current_user
+      @reservation.update_attributes(update_reservation_params)
+      @reservation.save
+    end
   end
 
   private
+  def update_reservation_params
+    params.require(:reservation).permit(:validation)
+  end
 
   def reservation_params
     params.require(:reservation).permit(:id, :begin_date, :end_date, :validation)

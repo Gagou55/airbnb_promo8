@@ -17,10 +17,10 @@
             <div class="col-xs-12 col-md-6 text-center">
               <div class="flatcard">
                 <div class="row">
-                  <%= image_tag "http://placehold.it/300x200"%>
+                  <%= image_tag flat.picture.url(:medium), width: 300, heigh: 200 %>
                 </div>
-                <div class="row">
-                  <%= flat.description %>
+                <div class="row padding-20">
+                  <b> <%= flat.title %> </b> <br>
                   <%= flat.address %>
                 </div>
               </div>
@@ -28,7 +28,7 @@
           <% end %>
         </div>
       </div>
-       <div class="col-xs-12 col-md-4 float-right mt-20" id="map" style="width: 530px; height: 600px;">
+       <div class="col-xs-12 col-md-4 float-right mt-20" id="map" style="width: 500px; height: 550px;">
        </div>
     </div>
   </div>

@@ -15,7 +15,7 @@ class ReservationsController < ApplicationController
 
   def create
     @reservation = current_user.reservations.new(reservation_params)
-
+    @reservation.validation = false
     @flat = Flat.find(params[:flat_id])
     @reservation.flat_id = @flat.id
 
@@ -29,6 +29,12 @@ class ReservationsController < ApplicationController
   def new
     @flat = Flat.find(params[:flat_id])
     @reservation = Reservation.new
+  end
+
+  def update
+    @reservation = Reservation.find(params[:reservation_id])
+    @reservation.validation = true
+    @reservation.save
   end
 
   private

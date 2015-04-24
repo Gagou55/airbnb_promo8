@@ -1,13 +1,17 @@
 <div class="page">
   <div class="container text-center">
-  <h1>Mes Réservations</h1> <br>
+  <h1>My Reservation</h1> <br>
   <div class="col-xs-4"></div>
   <div class="col-xs-4" id="reservation-window-confirmation">
     <div class=text-center>
       <h2>Your reservation</h2>
       <% @flat = Flat.find(@reservation.flat_id) %>
-      <%= image_tag @flat.picture1 %>
-      <%= "Your appartment: #{@flat.title}" %> <br>
+      <%= link_to flat_path(@flat) do %>
+        <%= image_tag @flat.picture1 %>
+      <% end %>
+      <%= link_to flat_path(@flat) do %>
+        <%= "Your appartment: #{@flat.title}" %> <br>
+      <% end %>
       <% @user = User.find(@reservation.user_id) %>
       <%= "Owner contact: #{@user.first_name} #{@user.last_name}" %> <br>
       <%= "Date of arrival: #{@reservation.begin_date}" %> <br>
@@ -15,6 +19,9 @@
       <%= "ENJOYYYYY !!!!!!" %>
     </div>
     </div>
+      <%= link_to root_path do %>
+        <%= "Home" %> <br>
+      <% end %>
   </div>
 </div>
 <!--  /flats/:flat_id/reservations/:id -->

@@ -1,20 +1,33 @@
 <div class="container">
 <br>
+<h1 class="text-center">My Reservations</h1><br>
+    <h2 class="text-center">Send us a card !</h2> <br>
 <% number = 0 %>
 <% @reservations.each do |reservation| %>
-  <div class="col-xs-4" id="reservation-window-confirmation">
+  <div class="col-md-6" id="reservation-window-confirmation">
     <div class=text-center>
       <% number += 1 %>
-      <h2><%= "Your reservation #{number}" %></h2>
       <% @flat = Flat.find(reservation.flat_id) %>
-      <%= image_tag @flat.picture1 %>
-      <%= "Your appartment: #{@flat.title}" %> <br>
+
+
+      <%= link_to flat_reservation_path(reservation.flat, reservation) do %>
+        <h2><%= "Reservation #{number}" %></h2>
+      <% end %>
+
+      <%= link_to flat_path(@flat) do %>
+        <%= image_tag @flat.picture.url(:thumb) %> <br>
+      <% end %>
+
+      <%= link_to flat_path(@flat) do %>
+        <%= "Your appartment: #{@flat.title}" %> <br>
+      <% end %>
+
       <% @user = User.find(reservation.user_id) %>
-      <%= "Owner contact: #{@user.first_name} #{@user.last_name}" %> <br>
       <%= "Date of arrival: #{reservation.begin_date}" %> <br>
       <%= "Date of departure: #{reservation.end_date}" %> <br> <br>
-      <%= "ENJOYYYYY !!!!!!" %>
+
     </div>
   </div>
 <% end %>
+
 </div>

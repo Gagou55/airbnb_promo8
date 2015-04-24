@@ -28,6 +28,10 @@ body {
    padding: 20px;
  }
 
+.padding-bottom-40 {
+   padding-bottom: 40px;
+ }
+
  .padding-bottom-20 {
   padding-bottom: 20px;
  }
@@ -38,6 +42,15 @@ body {
    margin-bottom: 40px;
    border-radius: 10px;
  }
+
+.title-home {
+  top: 420px;
+  left: 410px;
+  h1 {
+  color: white !important;
+  font-size: 50px;
+  }
+}
 
  .page {
   min-height: 450px;

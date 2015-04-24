@@ -1,7 +1,7 @@
 #banner {
   position:relative;
-  height: 550px;
-  background-image: image-url('background.jpg');
+  height: 640px;
+  background-image: image-url('background7.jpg');
   background-size: cover;
   z-index:1
     h1 {
@@ -23,6 +23,15 @@
     a {
     margin: 0 50px 150px 40px;
   }
+}
+
+.box-shadow {
+  position:absolute;
+  bottom:0;
+  height: 640px;
+  background-color: rgba(64, 64, 64, 0.2);
+  width:100%;
+  z-index:200;
 }
 
 .titre-home {

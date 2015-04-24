@@ -1,20 +1,16 @@
 /* -------------------------------------
  * You killer button SASS module
  * ------------------------------------- */
-
- margin-10 {
-  margin-top:10px;
- }
-
- .btn-search{
+.btn-search{
   color: $navbar-color;
   background-color: $navbar-color-button;
   border-color: #9CA3A8;
-  }
-  .btn-search:hover{
-    color: $navbar-color-hover;
-    background-color: $navbar-color-button-hover;
-  }
+}
+
+.btn-search:hover{
+  color: $navbar-color-hover;
+  background-color: $navbar-color-button-hover;
+}
 
 #line-add-picture{
   margin-left: 140px;

@@ -3,6 +3,7 @@ class WelcomeController < ApplicationController
 
   def index
     @flats = Flat.all.select { |f| f.picture.exists? }.take(3)
+
   end
 
 end

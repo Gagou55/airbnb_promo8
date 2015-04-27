@@ -8,8 +8,13 @@
       <%= f.input :description %>
       <%= f.input :price %>
 
-      <%= f.label :picture %>
-      <%= f.file_field :picture %>
+      <!-- <%= f.label :picture %>
+      <%= f.file_field :picture %> -->
+
+      <%= f.file_field :picture, class: 'filestyle',
+       :'data-classButton' => 'btn btn-primary',
+       :'data-input' => 'false', classIcon:  'icon-plus',
+       :'data-buttonText' => 'Ajouter une photo'  %>
 
       <%= f.submit %>
       <% end %>

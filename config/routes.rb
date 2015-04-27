@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   # get 'users/edit'
 
   resources :flats, only: [:index, :show, :update, :edit, :create, :new] do
-    resources :reservations, only: [ :new, :create, :show, :index]
+    resources :reservations, only: [ :new, :create, :show, :index, :update]
   end
 
   get "users/reservations", to: "reservations#index"
@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
   resources :users, only: [:show, :edit, :update]
   resources :profiles
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.

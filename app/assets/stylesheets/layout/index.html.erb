@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="row text-center padded">
+    <h1>My trips</h1>
+  <% if @bookings.size == 0 %>
+    <div class="padded"><p>You don't have any bookings</p></div>
+    <div class="padded"><%= link_to "Plan your next trip", pages_home_path, class: "btn btn-primary" %></div>
+  <% end %>
+  </div>
+  <% @bookings.each do |booking| %>
+  <div class="row opacity-effect" id="trip-card">
+    <div class="col-xs-12 col-sm-4">
+      <%= image_tag booking.flat.flat_images.first.picture.url(:medium), class: "align-left", id: "photo-trip-card" %>
+      <div id="photo-text-trip-card">
+        <h4><%= booking.flat.city %></h4>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-4 text-trip-card">
+      <h3><%= booking.flat.title.first(10) %></h3>
+      <h4><%= booking.flat.description.first(20)%>...</h4>
+      <p>Check-in date : <%= booking.check_in %></p>
+      <p>Check-out date: <%= booking.check_out %></p>
+      <p>Total price: <%= booking.price_cents %> $</p>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <% if booking.accepted %>
+        <div id="row-padding">
+          <div class="row">
+            <div class="col-xs-2">
+              <%= image_tag "validated.png", class: "fadeIn" %>
+            </div>
+            <div class="col-xs-6 fadeIn">
+              <p>Your reservation has been validated</p>
+            </div>
+          </div>
+        </div>
+      <% else %>
+        <div id="row-padding">
+          <div class="row">
+            <div class="col-xs-2">
+              <%= image_tag "pending.png", class: "fadeIn" %>
+            </div>
+            <div class="col-xs-6 fadeIn">
+              <p>Your reservation is still pending</p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      <div class="row">
+        <%= link_to "Cancel my reservation", account_booking_path(booking), method: :delete, class: "btn btn-success", id: "text-padding" %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>

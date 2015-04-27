@@ -17,6 +17,7 @@
 //= require gmaps/google
 //= require_tree .
 //= require bootstrap-datepicker
+//= require bootstrap-filestyle
 
 
 $(document).ready(function() {
